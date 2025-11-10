@@ -1,0 +1,12 @@
+.gradient-border {
+  border-width: var(--gradient-border-width, 1px);
+  border-style: solid;
+
+  border-image: radial-gradient(
+    farthest-corner circle at top right,
+    oklch(var(--primary-color)),
+    oklch(var(--secondary-color))
+  ) 1 ;
+}
+
+

@@ -1,0 +1,55 @@
+:root {
+    --shine-color: 100% 0 271.152;
+    --shine-opacity-start: 0;
+    --shine-opacity-light: 0.01;
+    --shine-opacity-peak: 0.76;
+    --shine-opacity-fade: 0.004;
+    --shine-opacity-end: 0;
+
+    --shine-stop-start: 0%;
+    --shine-stop-light: 30.8%;
+    --shine-stop-peak: 94.5%;
+    --shine-stop-fade: 95.2%;
+    --shine-stop-end: 100%;
+
+    --shine-duration: 1s;
+    --shine-timing: ease;
+    --shine-direction: 45deg;
+
+    --shine-width: 100%;
+    --shine-start-position: -100%;
+    --shine-end-position: 100%;
+
+    --shine-z-index: -1;
+}
+
+.shine-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.shine-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: var(--shine-start-position);
+    width: var(--shine-width);
+    height: 100%;
+    background: linear-gradient(
+        var(--shine-direction),
+        oklch(var(--shine-color) / var(--shine-opacity-start)) var(--shine-stop-start),
+        oklch(var(--shine-color) / var(--shine-opacity-light)) var(--shine-stop-light),
+        oklch(var(--shine-color) / var(--shine-opacity-peak)) var(--shine-stop-peak),
+        oklch(var(--shine-color) / var(--shine-opacity-fade)) var(--shine-stop-fade),
+        oklch(var(--shine-color) / var(--shine-opacity-end)) var(--shine-stop-end)
+    );
+    transition: all var(--shine-duration) var(--shine-timing);
+    pointer-events: none;
+    z-index: var(--shine-z-index);
+    opacity: 0;
+}
+
+.shine-effect:hover::before {
+    left: var(--shine-end-position);
+    opacity: 1;
+}

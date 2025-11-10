@@ -1,5 +1,5 @@
 import { signalStore, withMethods, withState, withComputed, patchState } from '@ngrx/signals';
-import { SecretAgent, SecretAgentState, SecretAgentStatus } from './secret-agent.interface';
+import { SecretAgentState, SecretAgentStatus } from './secret-agent.interface';
 import { computed, inject } from '@angular/core';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { catchError, EMPTY, pipe, switchMap, tap } from 'rxjs';
@@ -23,9 +23,9 @@ export const SecretAgentStore = signalStore(
       let result = filter ? agents.filter((a) => a.lastKnownStatus === filter) : agents;
       result.sort((a, b) => {
         if(a.lastKnownStatus < b.lastKnownStatus) {
-          return 0
+          return 0;
         } else {
-          return 1
+          return 1;
         }
       });
       return result;

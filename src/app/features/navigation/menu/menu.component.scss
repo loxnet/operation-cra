@@ -1,0 +1,19 @@
+:host {
+  margin: 0 .75em;
+  cursor: pointer;
+  h2 {
+    font-size: 1.2em;
+    padding: .25em;
+    border-bottom: 2px solid var(--operation-border-color, transparent);
+    transition: border-bottom ease 100ms;
+    &:hover {
+      --operation-border-color: oklch(100% 0 271.152) ;
+      transition: border-bottom ease 100ms;
+    }
+  }
+  ul {
+    list-style: none;
+    padding:0;
+    margin: 0;
+  }
+}

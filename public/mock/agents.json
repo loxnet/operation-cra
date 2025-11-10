@@ -74,14 +74,14 @@
     "nickname": "ochettlea",
     "lastKnownStatus": "DECEASED",
     "currentLocation": {"latitude": 7.4774153, "longitude": -71.2970721},
-    "bananaBread": true
+    "bananaBread": false
   },
   {
     "id": "d2140d01-61f1-455d-94ca-d0050c2b37ec",
     "nickname": "ejakubovskib",
     "lastKnownStatus": "REST",
     "currentLocation": {"latitude": 34.0599302, "longitude": -118.249786},
-    "bananaBread": true
+    "bananaBread": false
   },
   {
     "id": "95190cf0-754e-4ca8-9d3b-58029248e2d8",
@@ -95,14 +95,14 @@
     "nickname": "fdoctord",
     "lastKnownStatus": "UNKNOWN",
     "currentLocation": {"latitude": 6.7527994, "longitude": 79.8949309},
-    "bananaBread": true
+    "bananaBread": false
   },
   {
     "id": "ad592892-5f6e-44e2-91ac-4553dbd15dd8",
     "nickname": "nmacveighe",
     "lastKnownStatus": "REST",
     "currentLocation": {"latitude": -6.4306844, "longitude": 106.7175669},
-    "bananaBread": true
+    "bananaBread": false
   },
   {
     "id": "4256df91-9de0-4909-919c-457255646f7d",
@@ -123,7 +123,7 @@
     "nickname": "ngraveth",
     "lastKnownStatus": "DECEASED",
     "currentLocation": {"latitude": 50.1164, "longitude": -122.96946},
-    "bananaBread": false
+    "bananaBread": true
   },
   {
     "id": "0276d954-0a76-4019-a407-043341f59b75",

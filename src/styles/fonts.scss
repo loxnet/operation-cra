@@ -1,0 +1,17 @@
+@use '../../public/fontawesome/css/solid';
+@use '../../public/fontawesome/css/regular';
+@use '../../public/fontawesome/css/fontawesome';
+
+@font-face {
+  font-family: 'Futuristic';
+  src: url('/fonts/custom/Futuristic Armour.otf');
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/montserrat/Montserrat-Regular.ttf');
+}
+
+.far, .fas {
+  font-size: var(--fontawesome-icon-size, 18pt);
+}

@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-width: 1px ;
+  border-bottom-style: solid;
+  border-image: linear-gradient(
+    45deg,
+    oklch(100% 0 271.152 / 0%),
+    oklch(100% 0 271.152)
+  ) 1 ;
+  padding: 1em;
+  h1 {
+    font-family: "Futuristic";
+    font-weight: bolder;
+    letter-spacing: .3rem;
+    background-image: linear-gradient(45deg, oklch(var(--primary-color)), oklch(var(--secondary-color)));
+    color: transparent;
+    background-clip: text;
+    margin: 0;
+    font-size: var(--title-font-size, 2em);
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+}

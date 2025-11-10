@@ -11,6 +11,6 @@ export class SecretAgentService {
   private http = inject(HttpClient);
 
   getSecretAgents(): Observable<SecretAgent[]> {
-    return this.http.get<SecretAgent[]>(`${environment.backendUrl}/${environment.secretAgentPath}`)
+    return this.http.get<SecretAgent[]>(`${environment.secretAgentPath}`)
   }
 }
