@@ -1,6 +1,10 @@
 :host {
   display: flex;
+  height: 92%;
   app-secret-agent-list {
-    flex: .2 0;
+    flex: 0 0 330px;
+  }
+  app-secret-agent-detail {
+    flex: 1 1 auto;
   }
 }

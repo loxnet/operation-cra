@@ -1,0 +1,9 @@
+:host {
+  #map {
+    height: 400px;
+    width: 400px;
+    min-height: 400px;
+    overflow: hidden;
+    border: 1px solid oklch(var(--shiny-white));
+  }
+}

@@ -1,12 +1,18 @@
+.scrollable {
+  scrollbar-width: thin ;
+  scrollbar-color: oklch(var(--shiny-white)) transparent;
+  overflow: auto;
+}
+
+
+
 .gradient-border {
   border-width: var(--gradient-border-width, 1px);
   border-style: solid;
 
   border-image: radial-gradient(
     farthest-corner circle at top right,
-    oklch(var(--primary-color)),
-    oklch(var(--secondary-color))
+    oklch(var(--border-top-left-color, var(--primary-color))),
+    oklch(var(--border-top-right-color,var(--secondary-color)))
   ) 1 ;
 }
-
-

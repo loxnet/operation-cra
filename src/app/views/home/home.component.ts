@@ -10,10 +10,11 @@ import { SecretAgent } from '../../features/secret-agents/stores/secret-agent.in
   imports:[SecretAgentListComponent, SecretAgentDetailComponent]
 })
 export class HomeComponent implements OnInit {
-  selectedAgent = signal<SecretAgent | undefined>(undefined);
-  constructor() { }
-
-  ngOnInit() {
+  setSelectedAgent($event: Event) {
+    console.log($event);
   }
+  selectedAgent = signal<SecretAgent | null>(null);
+
+  ngOnInit() {}
 
 }
