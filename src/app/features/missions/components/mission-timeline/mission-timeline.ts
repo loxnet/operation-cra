@@ -13,7 +13,6 @@ interface TimelinePosition {
 
 @Component({
   selector: 'app-mission-timeline',
-  standalone: true,
   imports: [CommonModule],
   templateUrl: './mission-timeline.html',
   styleUrl: './mission-timeline.scss',

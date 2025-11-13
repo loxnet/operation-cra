@@ -10,7 +10,6 @@ import { SecretAgentStatus } from '../../features/secret-agents/stores/secret-ag
 
 @Component({
   selector: 'app-mission-dashboard',
-  standalone: true,
   imports: [
     CommonModule,
     MissionTimeline,
