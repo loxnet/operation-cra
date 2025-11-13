@@ -19,7 +19,9 @@ export interface SecretAgent {
 
 export interface SecretAgentState {
   agents: SecretAgent[];
-  filter: SecretAgentStatus ;
+  filter: SecretAgentStatus | null;
   isLoading: boolean;
-  error: string | null ;
+  error: string | null;
+  searchQuery: string;
+  selectedAgentNickname: string | null;
 }

@@ -1,0 +1,59 @@
+[
+  {
+    "id": "mission-001",
+    "codeName": "OPÉRATION TEMPÊTE DU DÉSERT",
+    "geolocation": {
+      "latitude": 48.8566,
+      "longitude": 2.3522,
+      "accuracy": 100,
+      "altitude": null,
+      "altitudeAccuracy": null,
+      "heading": null,
+      "speed": null
+    },
+    "summary": "Récupération de documents classifiés dans un coffre-fort sécurisé à Paris. Mission de haute importance nécessitant discrétion absolue.",
+    "status": "IN_PROGRESS",
+    "startDate": "2025-11-06T00:00:00.000Z",
+    "endDate": "2025-12-18T00:00:00.000Z",
+    "assignedAgentNickname": "jconing3",
+    "durationWeeks": 6
+  },
+  {
+    "id": "mission-002",
+    "codeName": "FALCON ROUGE",
+    "geolocation": {
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "accuracy": 100,
+      "altitude": null,
+      "altitudeAccuracy": null,
+      "heading": null,
+      "speed": null
+    },
+    "summary": "Surveillance d'un réseau d'espionnage international à Londres. Nécessite compétences en infiltration et communication cryptée.",
+    "status": "PLANNED",
+    "startDate": "2025-11-20T00:00:00.000Z",
+    "endDate": "2026-01-08T00:00:00.000Z",
+    "assignedAgentNickname": null,
+    "durationWeeks": 7
+  },
+  {
+    "id": "mission-003",
+    "codeName": "NUIT POLAIRE",
+    "geolocation": {
+      "latitude": 35.6762,
+      "longitude": 139.6503,
+      "accuracy": 100,
+      "altitude": null,
+      "altitudeAccuracy": null,
+      "heading": null,
+      "speed": null
+    },
+    "summary": "Extraction d'un scientifique défecteur à Tokyo. Fenêtre d'opportunité limitée, agent doit être opérationnel immédiatement.",
+    "status": "PLANNED",
+    "startDate": "2025-11-27T00:00:00.000Z",
+    "endDate": "2026-01-01T00:00:00.000Z",
+    "assignedAgentNickname": null,
+    "durationWeeks": 5
+  }
+]

@@ -23,9 +23,9 @@
   {
     "id": "8f937718-58bc-45cb-b7e8-ce7ace15b881",
     "nickname": "jconing3",
-    "lastKnownStatus": "HOSTAGE",
+    "lastKnownStatus": "OPERATIONAL",
     "currentLocation": {"latitude": 46.5734584, "longitude": 15.6125252},
-    "bananaBread": true
+    "bananaBread": false
   },
   {
     "id": "1e7f5216-d252-49f3-94da-1a0c0ea143ed",
@@ -53,7 +53,7 @@
     "nickname": "rgeeritz7",
     "lastKnownStatus": "OPERATIONAL",
     "currentLocation": {"latitude": 32.388662, "longitude": 119.39402},
-    "bananaBread": true
+    "bananaBread": false
   },
   {
     "id": "2af0a42e-e595-4762-8d3f-087d7e31ea21",
@@ -72,7 +72,7 @@
   {
     "id": "b6eca9ee-6eb6-4f95-8f44-4fd9bb725940",
     "nickname": "ochettlea",
-    "lastKnownStatus": "DECEASED",
+    "lastKnownStatus": "OPERATIONAL",
     "currentLocation": {"latitude": 7.4774153, "longitude": -71.2970721},
     "bananaBread": false
   },
@@ -114,7 +114,7 @@
   {
     "id": "9955ce2b-176d-4a97-a5ca-1bdff1d773bf",
     "nickname": "slawtieg",
-    "lastKnownStatus": "HOSTAGE",
+    "lastKnownStatus": "OPERATIONAL",
     "currentLocation": {"latitude": 49.2176624, "longitude": 2.121866},
     "bananaBread": false
   },
