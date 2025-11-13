@@ -484,29 +484,6 @@ Les warnings de budget CSS sont normaux. Pour les supprimer, éditez `angular.js
 ]
 ```
 
-## 🤝 Contribution
-
-Les contributions sont les bienvenues ! Voici comment procéder :
-
-1. **Fork** le projet
-2. **Créez** une branche pour votre fonctionnalité (`git checkout -b feature/ma-feature`)
-3. **Committez** vos changements (`git commit -m 'feat: ajout de ma feature'`)
-4. **Pushez** vers la branche (`git push origin feature/ma-feature`)
-5. **Ouvrez** une Pull Request
-
-### Convention de commits
-
-Utilisez le format [Conventional Commits](https://www.conventionalcommits.org/) :
-
-```
-feat: ajout du drag & drop
-fix: correction du calcul de dates
-docs: mise à jour du README
-style: formatage du code
-refactor: restructuration du store
-test: ajout de tests unitaires
-```
-
 ## Construction de l'image docker
 
 Le projet contient un dockerfile permettant la construction d'une image basée sur nginx/alpine
@@ -529,7 +506,3 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 - Spy Party pour l'inspiration du concept BananaBread
 
 ---
-
-**Made with ❤️ and ☕ by Loxnet**
-
-Pour toute question ou support, ouvrez une issue sur GitLab.
