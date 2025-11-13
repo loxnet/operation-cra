@@ -1,0 +1,123 @@
+<div class="timeline-container">
+  <div class="timeline-header">
+    <div class="timeline-date">{{ formatDate(timelineRange().start) }}</div>
+    <div class="timeline-title">CHRONOLOGIE DES MISSIONS</div>
+    <div class="timeline-date">{{ formatDate(timelineRange().end) }}</div>
+  </div>
+
+  <div class="timeline-wrapper">
+    <!-- Curseur de date actuelle -->
+    @if (currentDatePosition(); as datePos) {
+      <div class="current-date-cursor" [style.left.%]="datePos">
+        <div class="cursor-line"></div>
+        <div class="cursor-label">Aujourd'hui</div>
+      </div>
+    }
+
+    @for (position of timelinePositions(); track position.mission.id) {
+      <div
+        class="mission-row"
+        [class.drag-over]="dragOverMission() === position.mission.id"
+        (drop)="onDrop($event, position.mission)"
+        (dragover)="onDragOver($event, position.mission.id)"
+        (dragleave)="onDragLeave()"
+        (mousemove)="onTimelineMouseMove($event, position.mission)"
+        (mouseleave)="onTimelineMouseLeave()"
+      >
+        <div class="mission-label">
+          <span class="mission-code">{{ position.mission.codeName }}</span>
+          <span class="mission-status" [class]="getStatusClass(position.mission.status)">
+            {{ position.mission.status }}
+          </span>
+        </div>
+
+        <div class="timeline-track">
+          <div
+            class="mission-bar"
+            [class.notassigned]="position.agent === null"
+            [class]="getStatusClass(position.mission.status)"
+            [style.left.%]="position.left"
+            [style.width.%]="position.width"
+          >
+            @if (position.agent) {
+              <div class="agent-indicator">
+                <i class="fas fa-user"></i>
+                <span>{{ position.agent.nickname }}</span>
+                <span class="agent-status-badge" [class]="'status-' + position.agent.lastKnownStatus.toLowerCase()">
+                  {{ position.agent.lastKnownStatus }}
+                </span>
+                @if (position.agent.bananaBread) {
+                  <span class="banana-bread-indicator" title="Double agent contacté (BananaBread)">
+                    <i class="fas fa-bread-slice"></i>
+                  </span>
+                }
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    }
+
+    @if (timelinePositions().length === 0) {
+      <div class="empty-state">
+        <p>Aucune mission à afficher</p>
+      </div>
+    }
+  </div>
+
+  <!-- Tooltip qui suit la souris -->
+  @if (hoveredPosition(); as hovered) {
+    <div
+      class="timeline-tooltip"
+      [style.left.px]="hovered.x + 15"
+      [style.top.px]="100"
+    >
+      <div class="tooltip-section">
+        <strong>{{ hovered.mission.codeName }}</strong>
+      </div>
+
+      <div class="tooltip-section">
+        <div class="tooltip-label">
+          <i class="fas fa-location-dot"></i>
+          Position
+        </div>
+        <div>{{ formatDate(hovered.date) }}</div>
+      </div>
+
+      @if (hovered.mission.assignedAgentNickname; as agentNickname) {
+        <div class="tooltip-section">
+          <div class="tooltip-label">
+            <i class="fas fa-user"></i>
+            Agent
+          </div>
+          <div>{{ agentNickname }}</div>
+          <div class="tooltip-status">
+            @if (getAgentByNickname(agentNickname); as agent) {
+              Statut: {{ agent.lastKnownStatus }}
+            }
+          </div>
+        </div>
+
+        @if (getAgentByNickname(agentNickname); as assignedAgent) {
+          @if (assignedAgent.currentLocation; as location) {
+            <div class="tooltip-section">
+              <div class="tooltip-label">
+                <i class="fas fa-location-dot"></i>
+                Localisation
+              </div>
+              <div class="tooltip-coords">{{ formatLocation(location) }}</div>
+            </div>
+          }
+        }
+      } @else {
+        <div class="tooltip-section">
+          <div class="tooltip-label">
+            <i class="fas fa-user"></i>
+            Agent
+          </div>
+          <div class="tooltip-no-agent">Aucun agent assigné</div>
+        </div>
+      }
+    </div>
+  }
+</div>

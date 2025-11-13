@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { SecretAgentStatus } from '../../features/secret-agents/stores/secret-agent.interface';
 
 @Pipe({
-  name: 'SecretAgentStatusToFA'
+  name: 'secretAgentStatusToFa',
+  standalone: true
 })
 export class SecretAgentStatusToFaPipe implements PipeTransform {
 

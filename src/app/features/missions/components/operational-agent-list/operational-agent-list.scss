@@ -1,0 +1,217 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.agent-list-container {
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  height: 100%;
+  gap: 1.5rem;
+  padding: 1rem;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: oklch(var(--shiny-white)) transparent;
+}
+
+.agent-section {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 0.75rem;
+}
+
+.section-title {
+  font-family: 'Futuristic';
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+  color: oklch(var(--primary-color));
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-bottom: 1px solid oklch(var(--primary-color) / 0.3);
+
+  fa-icon {
+    font-size: 1rem;
+  }
+
+  .count {
+    margin-left: auto;
+    font-size: 0.85rem;
+    color: oklch(var(--secondary-color));
+  }
+}
+
+.agent-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 250px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: oklch(var(--shiny-white)) transparent;
+}
+
+.agent-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: var(--list-item-padding, 0.75rem);
+  margin: 0.5rem 0;
+  background-color: oklch(var(--primary-color) / 0.05);
+  border-radius: 4px;
+  transition: all 200ms ease;
+  cursor: pointer;
+
+  &.operational {
+    border-left: 3px solid oklch(var(--accent-color));
+    cursor: grab;
+
+    &:hover {
+      background-color: oklch(var(--accent-color) / 0.15);
+      transform: translateX(4px);
+    }
+
+    &:active {
+      cursor: grabbing;
+    }
+
+    &.dragging {
+      opacity: 0.5;
+      transform: scale(0.95);
+    }
+  }
+
+  &.resting {
+    border-left: 3px solid oklch(var(--secondary-color));
+    opacity: 0.7;
+
+    &.can-assign {
+      opacity: 1;
+      cursor: grab;
+      border-left-color: oklch(var(--accent-color));
+
+      &:hover {
+        background-color: oklch(var(--accent-color) / 0.1);
+      }
+    }
+  }
+
+  &.busy {
+    border-left: 3px solid oklch(var(--primary-color));
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.agent-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  fa-icon {
+    font-size: 1rem;
+    color: oklch(var(--primary-color));
+  }
+
+  .agent-nickname {
+    font-family: 'Futuristic';
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.08rem;
+    color: rgb(var(--default-text-color));
+  }
+}
+
+.warning-icon {
+  color: rgb(255 200 0);
+  font-size: 0.9rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.rest-days {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+
+  &.rest-ready {
+    background-color: oklch(var(--accent-color) / 0.2);
+    color: oklch(var(--accent-color));
+  }
+
+  &.rest-soon {
+    background-color: oklch(var(--secondary-color) / 0.2);
+    color: oklch(var(--secondary-color));
+  }
+
+  &.rest-waiting {
+    background-color: oklch(var(--primary-color) / 0.2);
+    color: oklch(var(--primary-color));
+  }
+}
+
+.mission-code {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: oklch(var(--secondary-color));
+  letter-spacing: 0.05rem;
+  opacity: 0.8;
+}
+
+.empty-message {
+  padding: 1.5rem;
+  text-align: center;
+  color: oklch(var(--primary-color) / 0.5);
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+.drag-hint {
+  padding: 1rem;
+  background-color: oklch(var(--primary-color) / 0.05);
+  border: 1px dashed oklch(var(--primary-color) / 0.3);
+  border-radius: 6px;
+  text-align: center;
+
+  p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: oklch(var(--primary-color));
+    line-height: 1.5;
+  }
+}
+
+// Media queries pour responsive
+@media (max-width: 768px) {
+  .agent-list {
+    max-height: 200px;
+  }
+
+  .section-title {
+    font-size: 0.8rem;
+  }
+
+  .agent-info {
+    .agent-nickname {
+      font-size: 0.75rem;
+    }
+  }
+
+  .drag-hint {
+    p {
+      font-size: 0.75rem;
+    }
+  }
+}

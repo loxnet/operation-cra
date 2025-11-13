@@ -15,6 +15,7 @@ export interface SecretAgent {
   lastKnownStatus: SecretAgentStatus;
   currentLocation?: GeolocationCoordinates;
   bananaBread: Boolean;
+  restDaysRemaining?: number;
 }
 
 export interface SecretAgentState {

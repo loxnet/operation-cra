@@ -13,8 +13,8 @@
     },
     "summary": "Récupération de documents classifiés dans un coffre-fort sécurisé à Paris. Mission de haute importance nécessitant discrétion absolue.",
     "status": "IN_PROGRESS",
-    "startDate": "2025-11-06T00:00:00.000Z",
-    "endDate": "2025-12-18T00:00:00.000Z",
+    "startDate": "2025-11-01T08:00:00.000Z",
+    "endDate": "2025-12-13T18:00:00.000Z",
     "assignedAgentNickname": "jconing3",
     "durationWeeks": 6
   },
@@ -31,10 +31,10 @@
       "speed": null
     },
     "summary": "Surveillance d'un réseau d'espionnage international à Londres. Nécessite compétences en infiltration et communication cryptée.",
-    "status": "PLANNED",
-    "startDate": "2025-11-20T00:00:00.000Z",
-    "endDate": "2026-01-08T00:00:00.000Z",
-    "assignedAgentNickname": null,
+    "status": "IN_PROGRESS",
+    "startDate": "2025-11-08T10:00:00.000Z",
+    "endDate": "2025-12-27T10:00:00.000Z",
+    "assignedAgentNickname": "rgeeritz7",
     "durationWeeks": 7
   },
   {
@@ -50,10 +50,143 @@
       "speed": null
     },
     "summary": "Extraction d'un scientifique défecteur à Tokyo. Fenêtre d'opportunité limitée, agent doit être opérationnel immédiatement.",
-    "status": "PLANNED",
-    "startDate": "2025-11-27T00:00:00.000Z",
-    "endDate": "2026-01-01T00:00:00.000Z",
+    "status": "IN_PROGRESS",
+    "startDate": "2025-11-10T06:00:00.000Z",
+    "endDate": "2025-12-15T18:00:00.000Z",
     "assignedAgentNickname": null,
     "durationWeeks": 5
+  },
+  {
+    "id": "mission-004",
+    "codeName": "OMBRE BLEUE",
+    "geolocation": {
+      "latitude": 40.7128,
+      "longitude": -74.0060,
+      "accuracy": 100,
+      "altitude": null,
+      "altitudeAccuracy": null,
+      "heading": null,
+      "speed": null
+    },
+    "summary": "Infiltration d'une organisation criminelle à New York. Collecte de preuves pour démantèlement du réseau.",
+    "status": "PLANNED",
+    "startDate": "2025-12-01T09:00:00.000Z",
+    "endDate": "2026-01-26T09:00:00.000Z",
+    "assignedAgentNickname": null,
+    "durationWeeks": 8
+  },
+  {
+    "id": "mission-005",
+    "codeName": "COBRA DORÉ",
+    "geolocation": {
+      "latitude": 13.7563,
+      "longitude": 100.5018,
+      "accuracy": 100,
+      "altitude": null,
+      "altitudeAccuracy": null,
+      "heading": null,
+      "speed": null
+    },
+    "summary": "Sécurisation d'un diplomate en danger à Bangkok. Protection rapprochée et exfiltration si nécessaire.",
+    "status": "PLANNED",
+    "startDate": "2025-12-05T07:00:00.000Z",
+    "endDate": "2025-12-19T07:00:00.000Z",
+    "assignedAgentNickname": null,
+    "durationWeeks": 2
+  },
+  {
+    "id": "mission-006",
+    "codeName": "PHÉNIX NOIR",
+    "geolocation": {
+      "latitude": -33.8688,
+      "longitude": 151.2093,
+      "accuracy": 100,
+      "altitude": null,
+      "altitudeAccuracy": null,
+      "heading": null,
+      "speed": null
+    },
+    "summary": "Récupération d'un prototype technologique volé à Sydney. Intervention discrète requise.",
+    "status": "PLANNED",
+    "startDate": "2025-12-10T12:00:00.000Z",
+    "endDate": "2026-01-21T12:00:00.000Z",
+    "assignedAgentNickname": null,
+    "durationWeeks": 6
+  },
+  {
+    "id": "mission-007",
+    "codeName": "GLACIER SILENCIEUX",
+    "geolocation": {
+      "latitude": 64.1466,
+      "longitude": -21.9426,
+      "accuracy": 100,
+      "altitude": null,
+      "altitudeAccuracy": null,
+      "heading": null,
+      "speed": null
+    },
+    "summary": "Enquête sur des activités suspectes dans une base de recherche en Islande. Conditions extrêmes.",
+    "status": "PLANNED",
+    "startDate": "2025-12-15T14:00:00.000Z",
+    "endDate": "2026-01-05T14:00:00.000Z",
+    "assignedAgentNickname": null,
+    "durationWeeks": 3
+  },
+  {
+    "id": "mission-008",
+    "codeName": "TIGRE BLANC",
+    "geolocation": {
+      "latitude": 55.7558,
+      "longitude": 37.6173,
+      "accuracy": 100,
+      "altitude": null,
+      "altitudeAccuracy": null,
+      "heading": null,
+      "speed": null
+    },
+    "summary": "Surveillance d'un suspect de trafic d'armes à Moscou. Mission de longue durée nécessitant patience.",
+    "status": "OVER",
+    "startDate": "2025-09-15T08:00:00.000Z",
+    "endDate": "2025-11-03T18:00:00.000Z",
+    "assignedAgentNickname": null,
+    "durationWeeks": 7
+  },
+  {
+    "id": "mission-009",
+    "codeName": "VIPÈRE D'ARGENT",
+    "geolocation": {
+      "latitude": 41.9028,
+      "longitude": 12.4964,
+      "accuracy": 100,
+      "altitude": null,
+      "altitudeAccuracy": null,
+      "heading": null,
+      "speed": null
+    },
+    "summary": "Protection d'un témoin clé lors d'un procès international à Rome. Sécurité maximale requise.",
+    "status": "ABORTED",
+    "startDate": "2025-10-01T09:00:00.000Z",
+    "endDate": "2025-10-08T09:00:00.000Z",
+    "assignedAgentNickname": null,
+    "durationWeeks": 1
+  },
+  {
+    "id": "mission-010",
+    "codeName": "DRAGON ÉCARLATE",
+    "geolocation": {
+      "latitude": 31.2304,
+      "longitude": 121.4737,
+      "accuracy": 100,
+      "altitude": null,
+      "altitudeAccuracy": null,
+      "heading": null,
+      "speed": null
+    },
+    "summary": "Interception de communications cryptées à Shanghai. Expertise technique avancée nécessaire.",
+    "status": "OVER",
+    "startDate": "2025-08-20T07:00:00.000Z",
+    "endDate": "2025-10-15T18:00:00.000Z",
+    "assignedAgentNickname": null,
+    "durationWeeks": 8
   }
 ]

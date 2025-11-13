@@ -1,0 +1,66 @@
+<div class="dialog-backdrop" (click)="onBackdropClick($event)">
+  <div class="dialog-container">
+    <div class="dialog-header">
+      <i class="fas fa-exclamation-triangle warning-icon"></i>
+      <h2>Remplacement d'agent requis</h2>
+      <button class="close-button" (click)="onCancel()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div class="dialog-content">
+      <p class="warning-message">
+        La mission <strong>{{ data().mission.codeName }}</strong> a déjà un agent assigné.
+      </p>
+
+      <div class="agents-comparison">
+        <div class="agent-card current">
+          <h4>Agent actuel</h4>
+          <div class="agent-name">{{ data().currentAgent.nickname }}</div>
+          <div class="agent-status">Statut: {{ data().currentAgent.lastKnownStatus }}</div>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="agent-card new">
+          <h4>Nouvel agent</h4>
+          <div class="agent-name">{{ data().newAgent.nickname }}</div>
+          <div class="agent-status">Statut: {{ data().newAgent.lastKnownStatus }}</div>
+        </div>
+      </div>
+
+      <div class="replacement-info">
+        <h4>Conséquences du remplacement :</h4>
+        <ul>
+          <li>
+            <strong>{{ data().currentAgent.nickname }}</strong> sera retiré de la mission
+            le <strong>{{ formatDate(data().dropDate) }}</strong>
+          </li>
+          <li>
+            L'agent sortant sera mis au <strong>repos pour 7 jours</strong>
+          </li>
+          <li>
+            <strong>{{ data().newAgent.nickname }}</strong> sera assigné à partir de cette date
+          </li>
+          <li>
+            La durée de la mission sera recalculée automatiquement
+          </li>
+        </ul>
+      </div>
+
+      <div class="warning-note">
+        <i class="fas fa-exclamation-triangle"></i>
+        <span>Cette action modifiera les plannings et nécessitera une période de repos obligatoire.</span>
+      </div>
+    </div>
+
+    <div class="dialog-actions">
+      <button class="btn btn-secondary" (click)="onCancel()">
+        Annuler
+      </button>
+      <button class="btn btn-primary" (click)="onConfirm()">
+        Confirmer le remplacement
+      </button>
+    </div>
+  </div>
+</div>

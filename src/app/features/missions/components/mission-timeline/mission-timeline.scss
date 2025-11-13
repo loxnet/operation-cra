@@ -1,0 +1,432 @@
+:host {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+}
+
+.timeline-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.timeline-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+  background-color: oklch(var(--primary-color) / 0.1);
+  border-bottom: 1px solid oklch(var(--primary-color) / 0.3);
+
+  .timeline-title {
+    font-family: 'Futuristic';
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    color: oklch(var(--shiny-white));
+  }
+
+  .timeline-date {
+    font-family: 'Montserrat';
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: oklch(var(--primary-color));
+  }
+}
+
+.timeline-wrapper {
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: oklch(var(--shiny-white)) transparent;
+}
+
+.current-date-cursor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  z-index: 10;
+  pointer-events: none;
+
+  .cursor-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    background-color: oklch(var(--shiny-white));
+    border-left: 2px dashed oklch(var(--shiny-white));
+    box-shadow: 0 0 8px oklch(var(--shiny-white) / 0.6);
+    animation: pulse-cursor 2s ease-in-out infinite;
+  }
+
+  .cursor-label {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg,
+        oklch(var(--shiny-white) / 0.9) 0%,
+        oklch(var(--shiny-white) / 0.7) 100%);
+    color: rgb(var(--background-color));
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-family: 'Futuristic';
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08rem;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@keyframes pulse-cursor {
+
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 12px oklch(var(--shiny-white) / 0.8);
+  }
+}
+
+.mission-row {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid oklch(var(--primary-color) / 0.1);
+  transition: background-color 200ms ease;
+
+  &:hover {
+    background-color: oklch(var(--primary-color) / 0.05);
+  }
+
+  &.drag-over {
+    background-color: oklch(var(--accent-color) / 0.15);
+    border: 2px dashed oklch(var(--accent-color));
+  }
+}
+
+.mission-label {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 0.25rem;
+  padding-left: 0.5rem;
+
+  .mission-code {
+    font-family: 'Futuristic';
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    color: rgb(var(--default-text-color));
+  }
+
+  .mission-status {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    width: fit-content;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+
+    &.status-in_progress {
+      background-color: oklch(var(--accent-color) / 0.2);
+      color: oklch(var(--accent-color));
+    }
+
+    &.status-planned {
+      background-color: oklch(var(--secondary-color) / 0.2);
+      color: oklch(var(--secondary-color));
+    }
+
+    &.status-over {
+      background-color: oklch(var(--primary-color) / 0.2);
+      color: oklch(var(--primary-color));
+    }
+
+    &.status-aborted {
+      background-color: rgb(200 50 50 / 0.2);
+      color: rgb(255 100 100);
+    }
+  }
+}
+
+.timeline-track {
+  position: relative;
+  height: 40px;
+  background: linear-gradient(90deg,
+      oklch(var(--primary-color) / 0.05) 0%,
+      oklch(var(--secondary-color) / 0.05) 100%);
+  border-radius: 4px;
+  overflow: visible;
+}
+
+.mission-bar {
+  position: absolute;
+  height: 100%;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  padding: 0 0.75rem;
+  cursor: pointer;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  background: var(--mission-bar-background, rgba(255, 255, 255, .1));
+  border: var(--mission-bar-border, 2px dashed rgba(255, 255, 255, .3));
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px oklch(var(--shiny-white) / 0.2);
+  }
+
+  &:not(.notassigned) {
+    &.status-in_progress {
+      --mission-bar-background: linear-gradient(90deg,
+          oklch(var(--accent-color) / 0.7) 0%,
+          oklch(var(--accent-color) / 0.9) 100%);
+      --mission-bar-border: 1px solid oklch(var(--accent-color));
+    }
+
+    &.status-planned {
+      --mission-bar-background: linear-gradient(90deg,
+          oklch(var(--secondary-color) / 0.5) 0%,
+          oklch(var(--secondary-color) / 0.7) 100%);
+      --mission-bar-border: 1px solid oklch(var(--secondary-color));
+    }
+
+    &.status-over {
+      --mission-bar-background: linear-gradient(90deg,
+          oklch(var(--primary-color) / 0.3) 0%,
+          oklch(var(--primary-color) / 0.5) 100%);
+      --mission-bar-border: 1px solid oklch(var(--primary-color));
+      opacity: 0.6;
+    }
+
+    &.status-aborted {
+      --mission-bar-background: linear-gradient(90deg,
+          rgb(200 50 50 / 0.5) 0%,
+          rgb(200 50 50 / 0.7) 100%);
+      --mission-bar-border: 1px solid rgb(255 100 100);
+      opacity: 0.6;
+    }
+  }
+
+}
+
+.agent-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Futuristic';
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  color: oklch(var(--shiny-white));
+
+  i {
+    font-size: 0.85rem;
+  }
+}
+
+.agent-status-badge {
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  white-space: nowrap;
+
+  &.status-operational {
+    background-color: rgba(50, 255, 100, 0.3);
+    color: rgb(100, 255, 150);
+    border: 1px solid rgb(100, 255, 150);
+  }
+
+  &.status-deceased {
+    background-color: rgba(150, 150, 150, 0.3);
+    color: rgb(200, 200, 200);
+    border: 1px solid rgb(200, 200, 200);
+  }
+
+  &.status-hostage {
+    background-color: rgba(255, 150, 50, 0.3);
+    color: rgb(255, 180, 100);
+    border: 1px solid rgb(255, 180, 100);
+  }
+
+  &.status-contaminated {
+    background-color: rgba(200, 50, 200, 0.3);
+    color: rgb(255, 100, 255);
+    border: 1px solid rgb(255, 100, 255);
+  }
+
+  &.status-rest {
+    background-color: rgba(100, 200, 255, 0.3);
+    color: rgb(150, 220, 255);
+    border: 1px solid rgb(150, 220, 255);
+  }
+
+  &.status-unknown {
+    background-color: rgba(255, 255, 100, 0.3);
+    color: rgb(255, 255, 150);
+    border: 1px solid rgb(255, 255, 150);
+  }
+}
+
+.banana-bread-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: linear-gradient(135deg,
+      rgb(255, 215, 0) 0%,
+      rgb(255, 180, 0) 100%);
+  border: 2px solid rgb(255, 200, 50);
+  border-radius: 50%;
+  cursor: help;
+  animation: pulse-banana 2s infinite;
+
+  i {
+    font-size: 0.7rem;
+    color: rgb(100, 70, 0);
+  }
+}
+
+@keyframes pulse-banana {
+
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+  }
+
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 8px 4px rgba(255, 215, 0, 0);
+  }
+}
+
+.empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: oklch(var(--primary-color));
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.timeline-tooltip {
+  position: fixed;
+  z-index: 1000;
+  background-color: rgb(var(--background-color));
+  border: 1px solid oklch(var(--primary-color) / 0.5);
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  min-width: 280px;
+  max-width: 350px;
+  pointer-events: none;
+  font-size: 0.85rem;
+
+  .tooltip-section {
+    margin-bottom: 0.75rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      font-family: 'Futuristic';
+      font-size: 0.95rem;
+      color: oklch(var(--shiny-white));
+      letter-spacing: 0.08rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .tooltip-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: oklch(var(--primary-color));
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+
+    fa-icon {
+      font-size: 0.85rem;
+    }
+  }
+
+  .tooltip-status {
+    font-size: 0.75rem;
+    color: oklch(var(--secondary-color));
+    margin-top: 0.25rem;
+  }
+
+  .tooltip-coords {
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    color: oklch(var(--accent-color));
+  }
+
+  .tooltip-no-agent {
+    color: oklch(var(--primary-color) / 0.6);
+    font-style: italic;
+  }
+}
+
+// Media queries pour responsive
+@media (max-width: 1024px) {
+  .mission-row {
+    grid-template-columns: 200px 1fr;
+  }
+
+  .mission-label {
+    .mission-code {
+      font-size: 0.75rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .mission-row {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.5rem;
+  }
+
+  .timeline-header {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    text-align: center;
+    gap: 0.5rem;
+
+    .timeline-date {
+      font-size: 0.75rem;
+    }
+
+    .timeline-title {
+      font-size: 1rem;
+    }
+  }
+
+  .timeline-tooltip {
+    min-width: 220px;
+    font-size: 0.8rem;
+  }
+}

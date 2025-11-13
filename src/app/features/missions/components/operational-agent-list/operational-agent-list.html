@@ -1,0 +1,84 @@
+<div class="agent-list-container">
+  <div class="agent-section">
+    <h3 class="section-title">
+      <i class="fas fa-user-tie"></i>
+      AGENTS OPÉRATIONNELS
+      <span class="count">({{ operationalAgents().length }})</span>
+    </h3>
+
+    <ul class="agent-list scrollable">
+      @for (item of operationalAgents(); track item.agent.nickname) {
+        <li
+          class="agent-item operational"
+          draggable="true"
+          (dragstart)="onDragStart($event, item.agent)"
+          (dragend)="onDragEnd($event)"
+        >
+          <div class="agent-info">
+            <i [class]="'fas fa-' + (item.agent.lastKnownStatus | secretAgentStatusToFa)"></i>
+            <span class="agent-nickname">{{ item.agent.nickname }}</span>
+          </div>
+
+          @if (item.agent.bananaBread) {
+            <i class="fas fa-exclamation-triangle warning-icon" title="Attention requise"></i>
+          }
+        </li>
+      } @empty {
+        <li class="empty-message">Aucun agent opérationnel disponible</li>
+      }
+    </ul>
+  </div>
+
+  <div class="agent-section">
+    <h3 class="section-title">
+      <i class="fas fa-bed"></i>
+      AGENTS AU REPOS
+      <span class="count">({{ restingAgents().length }})</span>
+    </h3>
+
+    <ul class="agent-list scrollable">
+      @for (item of restingAgents(); track item.agent.nickname) {
+        <li class="agent-item resting" [class.can-assign]="item.restInfo.daysRemaining === 0">
+          <div class="agent-info">
+            <i [class]="'fas fa-' + (item.agent.lastKnownStatus | secretAgentStatusToFa)"></i>
+            <span class="agent-nickname">{{ item.agent.nickname }}</span>
+          </div>
+
+          <span class="rest-days" [class]="getRestDaysClass(item.restInfo.daysRemaining)">
+            {{ formatRestDays(item.restInfo.daysRemaining) }}
+          </span>
+        </li>
+      } @empty {
+        <li class="empty-message">Aucun agent au repos</li>
+      }
+    </ul>
+  </div>
+
+  <div class="agent-section">
+    <h3 class="section-title">
+      AGENTS EN MISSION
+      <span class="count">({{ busyAgents().length }})</span>
+    </h3>
+
+    <ul class="agent-list scrollable">
+      @for (item of busyAgents(); track item.agent.nickname) {
+        <li class="agent-item busy">
+          <div class="agent-info">
+            <i [class]="'fas fa-' + (item.agent.lastKnownStatus | secretAgentStatusToFa)"></i>
+            <span class="agent-nickname">{{ item.agent.nickname }}</span>
+          </div>
+
+          @if (item.restInfo.currentMission) {
+            <span class="mission-code">{{ item.restInfo.currentMission.codeName }}</span>
+          }
+        </li>
+      } @empty {
+        <li class="empty-message">Aucun agent en mission</li>
+      }
+    </ul>
+  </div>
+
+  <div class="drag-hint">
+    <p>Glissez-déposez un agent opérationnel sur la timeline pour l'assigner à une mission</p>
+  </div>
+</div>

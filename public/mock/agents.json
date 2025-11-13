@@ -4,139 +4,159 @@
     "nickname": "ritzkowicz0",
     "lastKnownStatus": "UNKNOWN",
     "currentLocation": {"latitude": 44.833328, "longitude": -0.56667},
-    "bananaBread": true
+    "bananaBread": true,
+    "restDaysRemaining": 7
   },
   {
     "id": "ad502f00-c067-4e8b-9cb9-0052386cc557",
     "nickname": "craoul1",
     "lastKnownStatus": "REST",
     "currentLocation": {"latitude": 42.6688027, "longitude": 129.1189472},
-    "bananaBread": false
+    "bananaBread": false,
+    "restDaysRemaining": 4
   },
   {
     "id": "e697c1de-2aa9-464a-a968-6d611234c06a",
     "nickname": "gwoollhead2",
     "lastKnownStatus": "HOSTAGE",
     "currentLocation": {"latitude": 36.423873, "longitude": 98.150312},
-    "bananaBread": false
+    "bananaBread": false,
+    "restDaysRemaining": 7
   },
   {
     "id": "8f937718-58bc-45cb-b7e8-ce7ace15b881",
     "nickname": "jconing3",
-    "lastKnownStatus": "OPERATIONAL",
+    "lastKnownStatus": "HOSTAGE",
     "currentLocation": {"latitude": 46.5734584, "longitude": 15.6125252},
-    "bananaBread": false
+    "bananaBread": true,
+    "restDaysRemaining": 7
   },
   {
     "id": "1e7f5216-d252-49f3-94da-1a0c0ea143ed",
     "nickname": "ebetho4",
     "lastKnownStatus": "UNKNOWN",
     "currentLocation": {"latitude": 47.3559798, "longitude": 123.9215076},
-    "bananaBread": false
+    "bananaBread": false,
+    "restDaysRemaining": 7
   },
   {
     "id": "67862c41-d010-4ab6-936f-ff6e2ee5a875",
     "nickname": "bmacduff5",
     "lastKnownStatus": "CONTAMINATED",
     "currentLocation": {"latitude": -6.906714, "longitude": -78.25705},
-    "bananaBread": true
+    "bananaBread": true,
+    "restDaysRemaining": 7
   },
   {
     "id": "f0014dd9-3cbd-4672-85d4-77b6b9b52cb4",
     "nickname": "aselkirk6",
     "lastKnownStatus": "REST",
     "currentLocation": {"latitude": 11.2934532, "longitude": 2.435696},
-    "bananaBread": false
+    "bananaBread": false,
+    "restDaysRemaining": 6
   },
   {
     "id": "c0c690ac-8a9e-4137-a3ca-e2e3d9de62f9",
     "nickname": "rgeeritz7",
     "lastKnownStatus": "OPERATIONAL",
     "currentLocation": {"latitude": 32.388662, "longitude": 119.39402},
-    "bananaBread": false
+    "bananaBread": false,
+    "restDaysRemaining": 7
   },
   {
     "id": "2af0a42e-e595-4762-8d3f-087d7e31ea21",
     "nickname": "scaser8",
     "lastKnownStatus": "REST",
     "currentLocation": {"latitude": -6.2277509, "longitude": 106.7092723},
-    "bananaBread": false
+    "bananaBread": false,
+    "restDaysRemaining": 3
   },
   {
     "id": "c516974c-6b73-4328-a43b-7b46fef42c8d",
     "nickname": "cosmar9",
     "lastKnownStatus": "DECEASED",
     "currentLocation": {"latitude": 39.9338165, "longitude": 69.5678329},
-    "bananaBread": true
+    "bananaBread": true,
+    "restDaysRemaining": 0
   },
   {
     "id": "b6eca9ee-6eb6-4f95-8f44-4fd9bb725940",
     "nickname": "ochettlea",
     "lastKnownStatus": "OPERATIONAL",
     "currentLocation": {"latitude": 7.4774153, "longitude": -71.2970721},
-    "bananaBread": false
+    "bananaBread": false,
+    "restDaysRemaining": 7
   },
   {
     "id": "d2140d01-61f1-455d-94ca-d0050c2b37ec",
     "nickname": "ejakubovskib",
     "lastKnownStatus": "REST",
     "currentLocation": {"latitude": 34.0599302, "longitude": -118.249786},
-    "bananaBread": false
+    "bananaBread": false,
+    "restDaysRemaining": 2
   },
   {
     "id": "95190cf0-754e-4ca8-9d3b-58029248e2d8",
     "nickname": "graeburnc",
     "lastKnownStatus": "CONTAMINATED",
     "currentLocation": {"latitude": 55.045149, "longitude": 32.721561},
-    "bananaBread": false
+    "bananaBread": false,
+    "restDaysRemaining": 7
   },
   {
     "id": "466d61b2-e91e-4f0c-8377-07fc5385c07c",
     "nickname": "fdoctord",
     "lastKnownStatus": "UNKNOWN",
     "currentLocation": {"latitude": 6.7527994, "longitude": 79.8949309},
-    "bananaBread": false
+    "bananaBread": false,
+    "restDaysRemaining": 7
   },
   {
     "id": "ad592892-5f6e-44e2-91ac-4553dbd15dd8",
     "nickname": "nmacveighe",
     "lastKnownStatus": "REST",
     "currentLocation": {"latitude": -6.4306844, "longitude": 106.7175669},
-    "bananaBread": false
+    "bananaBread": false,
+    "restDaysRemaining": 5
   },
   {
     "id": "4256df91-9de0-4909-919c-457255646f7d",
     "nickname": "rlowesf",
     "lastKnownStatus": "UNKNOWN",
     "currentLocation": {"latitude": 67.1355975, "longitude": 20.6859936},
-    "bananaBread": false
+    "bananaBread": false,
+    "restDaysRemaining": 7
   },
   {
     "id": "9955ce2b-176d-4a97-a5ca-1bdff1d773bf",
     "nickname": "slawtieg",
     "lastKnownStatus": "OPERATIONAL",
     "currentLocation": {"latitude": 49.2176624, "longitude": 2.121866},
-    "bananaBread": false
+    "bananaBread": false,
+    "restDaysRemaining": 7
   },
   {
     "id": "86d38729-56fb-4082-938e-c15b386f2277",
     "nickname": "ngraveth",
     "lastKnownStatus": "DECEASED",
     "currentLocation": {"latitude": 50.1164, "longitude": -122.96946},
-    "bananaBread": true
+    "bananaBread": true,
+    "restDaysRemaining": 0
   },
   {
     "id": "0276d954-0a76-4019-a407-043341f59b75",
     "nickname": "mzellneri",
     "lastKnownStatus": "REST",
     "currentLocation": {"latitude": 30.031533, "longitude": 101.014425},
-    "bananaBread": false
+    "bananaBread": false,
+    "restDaysRemaining": 7
   },
   {
     "id": "2b980535-eb80-4625-9b14-370e5a8d7e2a",
     "nickname": "mcowherdj",
     "lastKnownStatus": "HOSTAGE",
     "currentLocation": {"latitude": 15.2113128, "longitude": 120.0278872},
-    "bananaBread": true
+    "bananaBread": true,
+    "restDaysRemaining": 7
   }
 ]
