@@ -3,8 +3,9 @@ import { MenuComponent } from '../menu/menu.component';
 
 @Component({
   selector: 'app-header',
+  standalone: true,
+  imports: [MenuComponent],
   templateUrl: './header.component.html',
-  imports:[MenuComponent],
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {

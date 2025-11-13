@@ -4,12 +4,13 @@
   justify-content: space-between;
   border-bottom-width: 1px ;
   border-bottom-style: solid;
+  padding:1em ;
   border-image: linear-gradient(
     45deg,
     oklch(100% 0 271.152 / 0%),
     oklch(100% 0 271.152)
   ) 1 ;
-  padding:0 1em ;
+
   h1 {
     font-family: "Futuristic";
     font-weight: bolder;

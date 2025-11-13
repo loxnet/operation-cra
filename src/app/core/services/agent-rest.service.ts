@@ -15,8 +15,6 @@ export interface AgentRestInfo {
   providedIn: 'root'
 })
 export class AgentRestService {
-  private readonly REST_DURATION_DAYS = 7;
-
   /**
    * Calcule les informations de repos d'un agent
    */
@@ -30,7 +28,7 @@ export class AgentRestService {
     if (currentMission) {
       return {
         isInRest: false,
-        daysRemaining: this.REST_DURATION_DAYS,
+        daysRemaining: agent.restDaysRemaining!,
         restEndDate: null,
         isInMission: true,
         currentMission,
@@ -47,10 +45,10 @@ export class AgentRestService {
         const missionEndDate = new Date(lastMission.endDate);
         const now = new Date();
         const daysSinceEnd = this.getDaysBetween(missionEndDate, now);
-        const daysRemaining = Math.max(0, this.REST_DURATION_DAYS - Math.floor(daysSinceEnd));
+        const daysRemaining = Math.max(0, agent.restDaysRemaining! - Math.floor(daysSinceEnd));
 
         const restEndDate = new Date(missionEndDate);
-        restEndDate.setDate(restEndDate.getDate() + this.REST_DURATION_DAYS);
+        restEndDate.setDate(restEndDate.getDate() + agent.restDaysRemaining!);
 
         return {
           isInRest: true,
@@ -65,7 +63,7 @@ export class AgentRestService {
       // Cas où l'agent est au repos mais pas de mission trouvée
       return {
         isInRest: true,
-        daysRemaining: this.REST_DURATION_DAYS,
+        daysRemaining: agent.restDaysRemaining!,
         restEndDate: null,
         isInMission: false,
         currentMission: null,

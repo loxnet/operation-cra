@@ -44,13 +44,14 @@
   overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: oklch(var(--shiny-white)) transparent;
+  padding-top:40px;
 }
 
 .current-date-cursor {
   position: absolute;
-  top: 0;
+  top: 30px;
   bottom: 0;
-  width: 2px;
+  width: 1px;
   z-index: 10;
   pointer-events: none;
 
@@ -59,16 +60,16 @@
     top: 0;
     bottom: 0;
     left: 0;
-    width: 2px;
+    width: 1px;
     background-color: oklch(var(--shiny-white));
     border-left: 2px dashed oklch(var(--shiny-white));
-    box-shadow: 0 0 8px oklch(var(--shiny-white) / 0.6);
+    box-shadow: 0 0 5px oklch(var(--shiny-white) / 0.6);
     animation: pulse-cursor 2s ease-in-out infinite;
   }
 
   .cursor-label {
     position: absolute;
-    top: -30px;
+    top: -20px;
     left: 50%;
     transform: translateX(-50%);
     background: linear-gradient(135deg,
